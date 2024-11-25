@@ -53,13 +53,45 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#audio-ultrasound-synchronized-tongue-movement-database-for-mandarin-speech" class="nav-link">Audio-Ultrasound Synchronized Tongue Movement database for Mandarin speech</a>
+            <li class="nav-item" data-bs-level="1"><a href="#auspeech-dataset-user-manual" class="nav-link">AUSpeech Dataset User Manual</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#project-layout" class="nav-link">Project layout</a>
+            <li class="nav-item" data-bs-level="2"><a href="#dataset-structure" class="nav-link">Dataset Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#data-collection-process" class="nav-link">Data Collection Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dataset-features" class="nav-link">Dataset Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#applications" class="nav-link">Applications</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#dataset-access-and-usage-notes" class="nav-link">Dataset Access and Usage Notes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#technical-validation" class="nav-link">Technical Validation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#citation" class="nav-link">Citation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#acknowledgments" class="nav-link">Acknowledgments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contact-information" class="nav-link">Contact Information</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -70,21 +102,130 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="audio-ultrasound-synchronized-tongue-movement-database-for-mandarin-speech">Audio-Ultrasound Synchronized Tongue Movement database for Mandarin speech</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="auspeech-dataset-user-manual">AUSpeech Dataset User Manual</h1>
+<h2 id="overview">Overview</h2>
+<p>The AUSpeech dataset is a comprehensive multimodal database aimed at advancing research in Mandarin speech production. It includes synchronized ultrasound tongue imaging (UTI), audio recordings, and text annotations, providing a rich resource for linguistics, speech recognition, and clinical applications. This dataset features contributions from 43 healthy participants and 11 patients with dysarthria.</p>
+<h3 id="key-features-and-corpus">Key Features and Corpus</h3>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><strong>High-resolution Ultrasound Imaging</strong>: 920×700 pixels at 60 frames per second.</li>
+<li><strong>Multimodal Data</strong>: Includes ultrasound, audio, and text annotations.</li>
+<li><strong>Extensive Speech Tasks</strong>:</li>
+<li><strong>Monophthongs</strong>: Sustained pronunciation of 6 Mandarin vowels.</li>
+<li><strong>Monosyllables</strong>: Coverage of 405 distinct syllables.</li>
+<li><strong>Sentences</strong>: 375 unique sentences per participant, representing diverse Mandarin phonetic structures.</li>
+<li><strong>Participant Diversity</strong>: Covers normal speakers from northern and southern China, with balanced gender representation.</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<hr />
+<h2 id="dataset-structure">Dataset Structure</h2>
+<h3 id="participant-demographics">Participant Demographics</h3>
+<ul>
+<li><strong>Healthy Participants</strong>: 21 males, 22 females, average age: 24.2 years.</li>
+<li><strong>Dysarthria Patients</strong>: 9 males, 2 females, age range: 45–70 years.</li>
+<li><strong>Total Participants</strong>: 54 individuals.</li>
+</ul>
+<h3 id="data-structure-and-organization">Data Structure and Organization</h3>
+<p>The dataset is organized into directories based on participants, with separate folders for each session. Data for each participant is divided into: </p>
+<ol>
+<li><strong>Audio Data</strong>: Stored in <code>.wav</code> format (16 kHz sampling rate, mono-channel).</li>
+<li><strong>Ultrasound Imaging Data</strong>: Stored in <code>.dcm</code> format.</li>
+<li><strong>Text Annotations</strong>: Stored in <code>.lab</code> and <code>.TextGrid</code> formats for precise alignment.</li>
+</ol>
+<h3 id="file-naming-convention">File Naming Convention</h3>
+<p>The files follow a consistent naming format:</p>
+<p><strong>Example</strong>: <code>speaker00012_M_s1_stn00001.wav</code><br />
+This format allows easy identification of the speaker, gender, session, and task.</p>
+<hr />
+<h2 id="data-collection-process">Data Collection Process</h2>
+<h3 id="sessions">Sessions</h3>
+<ol>
+<li><strong>Normal Session</strong>:</li>
+<li>Includes swallowing actions, monophthongs, monosyllables, and sentence tasks.</li>
+<li>Designed to capture a wide range of articulatory behaviors.</li>
+<li><strong>Patient Session</strong>:</li>
+<li>Focused on monophthongs monosyllables and words.</li>
+<li>Adjustments were made for participants with speech and motor difficulties.</li>
+</ol>
+<h3 id="speech-tasks">Speech Tasks</h3>
+<ul>
+<li><strong>Swallowing Actions</strong>: Three swallows were recorded at the start and end of each session to ensure proper alignment and data segmentation.</li>
+<li><strong>Monophthongs</strong>: Six Mandarin vowels (<code>/a/, /o/, /e/, /i/, /u/, /ü/</code>) were sustained for approximately two seconds each to capture stable imaging of tongue movement.</li>
+<li><strong>Monosyllables</strong>: Participants were asked to produce 15 monosyllables from a pool of 405 commonly used syllables, covering diverse Mandarin phonetic patterns.</li>
+<li><strong>Sentences</strong>: Each participant produced 375 unique sentences sourced from the Chinese Linguistic Data Consortium (CLDC), ensuring broad phonetic and syntactic diversity.</li>
+</ul>
+<hr />
+<h2 id="dataset-features">Dataset Features</h2>
+<h3 id="ultrasound-tongue-imaging">Ultrasound Tongue Imaging</h3>
+<ul>
+<li>High resolution: <strong>920×700 pixels</strong>.</li>
+<li>Captured at 60 frames per second.</li>
+<li>Dynamic range: <strong>114 dB</strong>.</li>
+<li>Probe setup: Sagittal placement under the chin with a custom support system to ensure stability.</li>
+</ul>
+<h3 id="audio-data">Audio Data</h3>
+<ul>
+<li>Sampling rate: <strong>16 kHz</strong>.</li>
+<li>Format: Single-channel <code>.wav</code> files.</li>
+</ul>
+<h3 id="text-data">Text Data</h3>
+<ul>
+<li>Includes <code>.lab</code> and TextGrid files.</li>
+<li>Provides precise alignment between speech audio and ultrasound imaging.</li>
+</ul>
+<hr />
+<h2 id="applications">Applications</h2>
+<h3 id="research">Research</h3>
+<ul>
+<li><strong>Phonetics and Linguistics</strong>: Study Mandarin tones, articulation patterns, and the dynamics of tongue movements.</li>
+<li><strong>Speech Recognition and Synthesis</strong>: Develop ultrasound-based ASR models and enhance synthesis systems.</li>
+<li><strong>Clinical Studies</strong>: Analyze articulatory differences between healthy individuals and patients with dysarthria.</li>
+</ul>
+<h3 id="clinical-applications">Clinical Applications</h3>
+<ul>
+<li>Speech therapy and rehabilitation for individuals with speech disorders.</li>
+<li>Development of AI-powered tools for speech assessment and education.</li>
+</ul>
+<h3 id="educational-use">Educational Use</h3>
+<ul>
+<li>Training materials for teaching Mandarin as a second language.</li>
+<li>Resources for understanding Mandarin phonology and articulatory dynamics.</li>
+</ul>
+<hr />
+<h2 id="dataset-access-and-usage-notes">Dataset Access and Usage Notes</h2>
+<h3 id="access">Access</h3>
+<p>The AUSpeech dataset is available for download at:<br />
+<a href="https://huanraozhineng1.github.io/AUSpeech/">https://huanraozhineng1.github.io/AUSpeech/</a></p>
+<h3 id="size">Size</h3>
+<p>The dataset size is approximately <strong>720 GB</strong>, including all audio, ultrasound, and text data.</p>
+<h3 id="usage-guidelines">Usage Guidelines</h3>
+<ul>
+<li>Ensure ethical use of the data for research and educational purposes.</li>
+<li>Cite the dataset appropriately in any publications or presentations.</li>
+</ul>
+<hr />
+<h2 id="technical-validation">Technical Validation</h2>
+<h3 id="quality-assurance">Quality Assurance</h3>
+<ul>
+<li><strong>Data Screening</strong>: Frames with signal loss or motion artifacts were identified and removed using automated algorithms and manual review.</li>
+<li><strong>Consistency Checks</strong>: Temporal alignment and imaging consistency were validated to ensure high data quality.</li>
+</ul>
+<h3 id="alignment">Alignment</h3>
+<p>The Montreal Forced Aligner (MFA) was used to generate TextGrid files for accurate synchronization of speech audio and ultrasound imaging.</p>
+<hr />
+<h2 id="citation">Citation</h2>
+<p>If you use the AUSpeech dataset in your research, please cite:<br />
+[mask]</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>This work was supported by:
+- <strong>National Key R&amp;D Program of China</strong>.
+- <strong>Shenzhen Science and Technology Program</strong>.
+- <strong>National Natural Science Foundation of China (NSFC)</strong>.</p>
+<p>For detailed funding information, refer to the official documentation.</p>
+<hr />
+<h2 id="contact-information">Contact Information</h2>
+<p>For questions or technical support regarding the dataset, please contact:<br />
+<a href="https://huanraozhineng1.github.io/AUSpeech/">https://huanraozhineng1.github.io/AUSpeech/</a></p>
+<p>Feel free to explore the AUSpeech dataset and leverage its rich resources for advancing research in speech science and clinical applications.</p></div>
             </div>
         </div>
 
@@ -166,5 +307,5 @@ docs/
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2024-11-24 10:14:27.009611+00:00
+Build Date UTC : 2024-11-25 06:22:27.589451+00:00
 -->
