@@ -59,7 +59,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#dataset-access-and-usage-notes" class="nav-link">Dataset Access and Usage Notes</a>
+            <li class="nav-item" data-bs-level="2"><a href="#dataset-access-and-download" class="nav-link">Dataset Access and Download</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -105,6 +105,20 @@
 <h1 id="auspeech-dataset">AUSpeech Dataset</h1>
 <h2 id="overview">Overview</h2>
 <p>The AUSpeech dataset is a comprehensive multimodal database aimed at advancing research in Mandarin speech production. It includes synchronized ultrasound tongue imaging (UTI), audio recordings, and text annotations, providing a rich resource for linguistics, speech recognition, and clinical applications. This dataset features contributions from 43 healthy participants and 11 patients with dysarthria.</p>
+<hr />
+<h2 id="dataset-access-and-download">Dataset Access and Download</h2>
+<h3 id="access">Access</h3>
+<p>The AUSpeech dataset is available for download at:<br />
+<a href="https://1drv.ms/f/c/23457fe3d550acd1/Eq4JtIrnh4lJiBEz2KPyFM8BUq0FqjIr7LT8x5zQX810iw?e=AL9cLd">Dowload this datasets</a></p>
+<h3 id="size">Size</h3>
+<p>The dataset size is approximately <strong>700 GB</strong>, including all audio, ultrasound, and text data.</p>
+<h3 id="usage-guidelines">Usage Guidelines</h3>
+<ul>
+<li>Ensure ethical use of the data for research and educational purposes.</li>
+<li>Cite the dataset appropriately in any publications or presentations.</li>
+</ul>
+<hr />
+<h2 id="dataset-structure">Dataset Structure</h2>
 <h3 id="key-features-and-corpus">Key Features and Corpus</h3>
 <ul>
 <li><strong>High-resolution Ultrasound Imaging</strong>: 920×700 pixels at 60 frames per second.</li>
@@ -115,20 +129,6 @@
 <li><strong>Sentences</strong>: 375 unique sentences per participant, representing diverse Mandarin phonetic structures.</li>
 <li><strong>Participant Diversity</strong>: Covers normal speakers from northern and southern China, with balanced gender representation.</li>
 </ul>
-<hr />
-<h2 id="dataset-access-and-usage-notes">Dataset Access and Usage Notes</h2>
-<h3 id="access">Access</h3>
-<p>The AUSpeech dataset is available for download at:<br />
-<a href="https://huanraozhineng1.github.io/AUSpeech/">https://huanraozhineng1.github.io/AUSpeech/</a></p>
-<h3 id="size">Size</h3>
-<p>The dataset size is approximately <strong>720 GB</strong>, including all audio, ultrasound, and text data.</p>
-<h3 id="usage-guidelines">Usage Guidelines</h3>
-<ul>
-<li>Ensure ethical use of the data for research and educational purposes.</li>
-<li>Cite the dataset appropriately in any publications or presentations.</li>
-</ul>
-<hr />
-<h2 id="dataset-structure">Dataset Structure</h2>
 <h3 id="participant-demographics">Participant Demographics</h3>
 <ul>
 <li><strong>Healthy Participants</strong>: 21 males, 22 females, average age: 24.2 years.</li>
@@ -209,7 +209,8 @@ This format allows easy identification of the speaker, gender, session, and task
 <li><strong>Consistency Checks</strong>: Temporal alignment and imaging consistency were validated to ensure high data quality.</li>
 </ul>
 <h3 id="alignment">Alignment</h3>
-<p>The Montreal Forced Aligner (MFA) was used to generate TextGrid files for accurate synchronization of speech audio and ultrasound imaging.</p>
+<p>The Montreal Forced Aligner (MFA) was used to generate TextGrid files for accurate synchronization of speech audio and ultrasound imaging.
+(We alignment using MFA on normal subject data and then conduct manual labeling checks. For patient data, we use manual annotation for audio pronunciation labeling.)</p>
 <hr />
 <h2 id="citation">Citation</h2>
 <p>If you use the AUSpeech dataset in your research, please cite:<br />
@@ -217,14 +218,14 @@ This format allows easy identification of the speaker, gender, session, and task
 <hr />
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>This work was supported by:
-- <strong>National Key R&amp;D Program of China</strong>.
+- <strong>National Natural Science Foundation of China</strong>.
 - <strong>Shenzhen Science and Technology Program</strong>.
-- <strong>National Natural Science Foundation of China (NSFC)</strong>.</p>
+- <strong>Shenzhen Peacock Team Project</strong>.</p>
 <p>For detailed funding information, refer to the official documentation.</p>
 <hr />
 <h2 id="contact-information">Contact Information</h2>
 <p>For questions or technical support regarding the dataset, please contact:<br />
-<a href="https://huanraozhineng1.github.io/AUSpeech/">https://huanraozhineng1.github.io/AUSpeech/</a></p>
+yd.yang2@siat.ac.cn</p>
 <p>Feel free to explore the AUSpeech dataset and leverage its rich resources for advancing research in speech science and clinical applications.</p></div>
             </div>
         </div>
@@ -307,5 +308,5 @@ This format allows easy identification of the speaker, gender, session, and task
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2024-11-25 06:24:19.146791+00:00
+Build Date UTC : 2024-12-11 13:53:28.307301+00:00
 -->
